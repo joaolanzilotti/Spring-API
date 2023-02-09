@@ -1,6 +1,7 @@
 package com.corporation.backendApi.config;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import com.corporation.backendApi.repositories.EnderecoRepository;
@@ -26,17 +27,18 @@ public class DevConfig implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
         
-        Pessoa pessoa = new Pessoa(null, "Joao", null);
-        Pessoa pessoa2 = new Pessoa(null, "Joana", null);
-        Pessoa pessoa3 = new Pessoa(null, "Doido", null);
+        Pessoa pessoa = new Pessoa(null, "Joao", new Date());
+        Pessoa pessoa2 = new Pessoa(null, "Joana", new Date());
+        Pessoa pessoa3 = new Pessoa(null, "Doido", new Date());
 
         Endereco endereco = new Endereco(null, "Rua Maranhao", 11695108, 50, "Ubatuba", pessoa);
         Endereco endereco2 = new Endereco(null, "Rua Maranhao", 116454108, 75, "Ubatuba", pessoa2);
         Endereco endereco3 = new Endereco(null, "Rua Merda", 116454108, 75, "Ubatuba", pessoa3);
         Endereco endereco4 = new Endereco(null, "Rua Doida", 116454108, 75, "Ubatuba", pessoa3);
+        Endereco endereco5 = new Endereco(null, "Rua Aguia", 116454108, 75, "Ubatuba", pessoa3);
 
         pessoaRepository.saveAll(Arrays.asList(pessoa, pessoa2, pessoa3));
-        enderecoRepository.saveAll(Arrays.asList(endereco, endereco2,endereco3, endereco4));
+        enderecoRepository.saveAll(Arrays.asList(endereco, endereco2,endereco3, endereco4, endereco5));
 
 
     }
