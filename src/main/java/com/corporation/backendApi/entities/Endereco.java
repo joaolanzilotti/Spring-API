@@ -1,14 +1,9 @@
 package com.corporation.backendApi.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -31,8 +26,9 @@ public class Endereco implements Serializable {
     private int cep;
     private int numero;
     private String cidade;
+    @ManyToOne
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoa;
 
-    @OneToMany(mappedBy= "endereco")
-    private List<Pessoa> pessoa;
     
 }
