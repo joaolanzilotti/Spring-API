@@ -33,7 +33,7 @@ public class PessoaResource {
 
     }
 
-    @PostMapping
+    @PostMapping(value = "/add")
     public ResponseEntity<Pessoa> addPessoa(@RequestBody Pessoa pessoa){
 
         pessoa = pessoaService.addPessoa(pessoa);
