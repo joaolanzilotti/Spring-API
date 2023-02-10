@@ -1,10 +1,10 @@
-# Spring-API
 
 Requisições:
 
 *Java 17*
+*JSON*
 
-*Formato JSON*
+*Spring API*
 -----------------------------------------------------------------------------
 
 Buscar Todas Pessoas -> localhost:8080/pessoas
