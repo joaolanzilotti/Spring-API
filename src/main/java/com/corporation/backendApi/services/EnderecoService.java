@@ -1,6 +1,7 @@
 package com.corporation.backendApi.services;
 
 import com.corporation.backendApi.entities.Endereco;
+import com.corporation.backendApi.entities.Pessoa;
 import com.corporation.backendApi.repositories.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class EnderecoService {
     public List<Endereco> findByIdEnderecoPessoa(Long id){
         List<Endereco> endereco = enderecoRepository.findAllEnderecosPessoa(id);
         return endereco;
+    }
+
+    public Endereco addEnderecoPessoa(Endereco endereco){
+        return enderecoRepository.save(endereco);
+
     }
     
 }

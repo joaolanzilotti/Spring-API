@@ -50,12 +50,13 @@ public class PessoaResource {
         return ResponseEntity.noContent().build();
     }
 
-//    @PutMapping(value = "/{id}")
-//    public ResponseEntity<Pessoa> updatePessoa(@PathVariable Long id, @RequestBody Pessoa pessoa){
-//
-//        pessoa = pessoaService.updatePessoa(id, pessoa);
-//
-//    }
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Pessoa> updatePessoa(@PathVariable Long id, @RequestBody Pessoa pessoa){
+
+        pessoa = pessoaService.updatePessoa(id, pessoa);
+        return ResponseEntity.ok().body(pessoa);
+
+    }
 
     
 }

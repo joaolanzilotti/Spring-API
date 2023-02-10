@@ -31,11 +31,11 @@ public class DevConfig implements CommandLineRunner{
         Pessoa pessoa2 = new Pessoa(null, "Joana", new Date());
         Pessoa pessoa3 = new Pessoa(null, "Doido", new Date());
 
-        Endereco endereco = new Endereco(null, "Rua Maranhao", 11695108, 50, "Ubatuba", pessoa);
-        Endereco endereco2 = new Endereco(null, "Rua Maranhao", 116454108, 75, "Ubatuba", pessoa2);
-        Endereco endereco3 = new Endereco(null, "Rua Merda", 116454108, 75, "Ubatuba", pessoa3);
-        Endereco endereco4 = new Endereco(null, "Rua Doida", 116454108, 75, "Ubatuba", pessoa3);
-        Endereco endereco5 = new Endereco(null, "Rua Aguia", 116454108, 75, "Ubatuba", pessoa3);
+        Endereco endereco = new Endereco(null, "Rua Maranhao", 11695108, 50, "Ubatuba", true, pessoa);
+        Endereco endereco2 = new Endereco(null, "Rua Maranhao", 116454108, 75, "Ubatuba", true, pessoa2);
+        Endereco endereco3 = new Endereco(null, "Rua Merda", 116454108, 75, "Ubatuba", true, pessoa3);
+        Endereco endereco4 = new Endereco(null, "Rua Doida", 116454108, 75, "Ubatuba", false, pessoa3);
+        Endereco endereco5 = new Endereco(null, "Rua Aguia", 116454108, 75, "Ubatuba", false, pessoa3);
 
         pessoaRepository.saveAll(Arrays.asList(pessoa, pessoa2, pessoa3));
         enderecoRepository.saveAll(Arrays.asList(endereco, endereco2,endereco3, endereco4, endereco5));
