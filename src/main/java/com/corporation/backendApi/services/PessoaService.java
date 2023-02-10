@@ -23,5 +23,28 @@ public class PessoaService {
         Optional<Pessoa> pessoa = pessoaRepository.findById(id);
         return pessoa.get();
     }
-    
+
+    public Pessoa addPessoa(Pessoa pessoa){
+        return pessoaRepository.save(pessoa);
+
+    }
+
+    public void deletePessoa(Long id){
+        pessoaRepository.deleteById(id);
+    }
+
+    public Pessoa updatePessoa(Long id, Pessoa pessoa){
+        Pessoa entity = pessoaRepository.getReferenceById(id);
+        updateData(entity, pessoa);
+        return pessoaRepository.save(entity);
+    }
+
+    private void updateData(Pessoa entity, Pessoa pessoa) {
+
+        entity.setNome(pessoa.getNome());
+        entity.setDataNascimento(pessoa.getDataNascimento());
+
+    }
+
+
 }

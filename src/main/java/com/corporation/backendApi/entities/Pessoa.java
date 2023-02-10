@@ -28,7 +28,7 @@ public class Pessoa implements Serializable {
     private Date dataNascimento;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "pessoa")
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
     private List<Endereco> endereco;
 
     public Pessoa(Long id, String nome, Date dataNascimento) {
